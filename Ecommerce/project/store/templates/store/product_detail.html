@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }}</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image.url }}" width="300" alt="{{ product.name }}">
+    <p><strong>Category:</strong> {{ product.category.name }}</p>
+    <p><strong>Price:</strong> ₹{{ product.price }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a> |
+    <a href="{% url 'home' %}">Back to Products</a>
+</body>
+</html>

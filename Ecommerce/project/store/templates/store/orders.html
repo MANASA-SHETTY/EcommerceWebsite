@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Orders</h2>
+{% for order in orders %}
+  <div>
+    <strong>Order ID:</strong> {{ order.id }} |
+    <strong>Date:</strong> {{ order.created_at|date:'Y-m-d H:i' }} |
+    <strong>Status:</strong> {{ order.is_paid|yesno:'Paid,Unpaid' }}
+    <ul>
+      {% for item in order.items.all %}
+        <li>{{ item.quantity }} x {{ item.product.name }} - ₹{{ item.total_price }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% empty %}
+  <p>No orders yet.</p>
+{% endfor %}
+{% endblock %}
