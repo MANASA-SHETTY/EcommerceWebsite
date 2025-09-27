@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import os
+ALLOWED_HOSTS = ['*']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -23,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6x2fa%zd=^krz04ld81j0*2izne+(bsv+_l*$x3zr9b5(7q*4g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
