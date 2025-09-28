@@ -6,4 +6,7 @@ sqlparse==0.4.4
 typing_extensions==4.7.1
 gunicorn
 python-3.10.13
+whitenoise
+dj-database-url
+psycopg2-binary
 
